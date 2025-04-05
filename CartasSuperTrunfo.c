@@ -11,6 +11,8 @@ int main() {
     float areaKm, areaKm2;
     float pib, pib2;
     int pontostur, pontostur2;
+    float denpopul, pibpercapita, denpopul2, pibpercapita2; //denpopul(densidade populacional) declaração
+
 
     //leitura de entrada da carta 1
     printf("Super Trunfo\n");
@@ -37,6 +39,10 @@ int main() {
     printf("Números de pontos turísticos: \n");
     scanf("%d", &pontostur);
 
+    //calculos pib per capita e densidade populacional, carta 1
+    denpopul = (float) populacao / areaKm;
+    pibpercapita = (float) pib / populacao;
+
     //leitura de entrada da carta 2
     printf("\nSelecione os dados da sua carta 2\n \nEstado: \n");
     scanf(" %c", &estado2);
@@ -59,6 +65,10 @@ int main() {
     printf("Números de pontos turísticos: \n");
     scanf("%d", &pontostur2);
 
+    //calculo de densidade populacional e pib percapta, carta 2
+    denpopul2 = (float) populacao2 / areaKm2;
+    pibpercapita2 = (float) pib2 / populacao2;
+
     //siada carta 1
     printf("carta 1: \n \nEstado: %c \n", estado);
     printf("Codigo da carta: %c%d \n", codigo, numerocod);
@@ -66,7 +76,9 @@ int main() {
     printf("População: %d \n", populacao);
     printf("Área: %.3fkm² \n", areaKm);
     printf("PIB: %.2f \n", pib);
-    printf("Pontos turísticos: %d \n \n", pontostur);
+    printf("Pontos turísticos: %d \n", pontostur);
+    printf("Densidade Populacional: %.2fhab/km² \n", denpopul);// saída densidade populacional carta 1
+    printf("PIB per capita: %.2f reais \n \n", pibpercapita);//saída PIB percapita carta 1
 
     //saida carta 2
     printf("carta 2: \n \nEstado: %c \n", estado2);
@@ -75,8 +87,9 @@ int main() {
     printf("População: %d \n", populacao2);
     printf("Área: %.3fkm² \n", areaKm2);
     printf("PIB: %.2f \n", pib2);
-    printf("Pontos turísticos: %d ", pontostur);
-
+    printf("Pontos turísticos: %d \n", pontostur);
+    printf("Densidade Populacional: %.2fhab/km² \n", denpopul2);// saída densidade populacional carta 2
+    printf("PIB per capita: %.2f reais \n", pibpercapita2);//saída PIB percapita carta 2
 
     return 0;
 }
